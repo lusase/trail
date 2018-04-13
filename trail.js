@@ -98,7 +98,7 @@
 
   class Trail {
     constructor({ctx, trails = 20, friction = 0.5, tension = 0.98, dampening = 0.25, size = 50}) {
-      this.ctx = ctx
+      this.ctx = typeof ctx === 'string' ? document.body.querySelector(ctx).getContext('2d') : ctx 
       this.frame = 1
       this.trails = trails
       this.friction = friction
@@ -112,6 +112,7 @@
     }
 
     start() {
+      this.resize()
       this.oscillator = new Oscillator({
         phase: 2 * Math.random() * Math.PI,
         amplitude: 85,
