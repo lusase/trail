@@ -19,6 +19,7 @@
     }
   }
 
+  
   class Oscillator {
     constructor(options = {phase:0,offset:0,frequency: 0.01, amplitude: 1}){
       this.phase = options.phase
